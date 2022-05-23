@@ -52,11 +52,7 @@ init:
 @------- if gpio == 1			// si se activa switch entrada gpio4
 
 ejecutar1:
-    @------- delay(250)	
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-	
+
 	ldr	r0, =pin1				// carga dirección de pin
 	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
 	bl 	digitalRead				// escribe 1 en pin para activar puerto GPIO
@@ -70,23 +66,13 @@ ejecutar1:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 	
-@------- delay(250)		 ;
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-
     cmp r6,#1
     beq ejecutar2
 
 
 ejecutar2:
     @------- delay(250)	
-    
-    ldr	r0, =delayMs
-    ldr	r0, [r0]
-    bl	delay
-    
+
     ldr	r0, =pin3				// carga dirección de pin
     ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
     bl 	digitalRead				// escribe 1 en pin para activar puerto GPIO
