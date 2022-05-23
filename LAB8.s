@@ -20,7 +20,7 @@ INPUT2   =  0
 OUTPUT	 =	1
 main: 
 
- push 	{ip, lr}	@ push return address + dummy register
+    push 	{ip, lr}	@ push return address + dummy register
 				@ for alignment
 
 	bl	wiringPiSetup			// Inicializar librería wiringpi
@@ -30,5 +30,7 @@ main:
 	ldr	r0, =ErrMsg				// SI error, 
 	bl	printf					// imprimir mensaje y
 	b	done					// salir del programa
+
+
 done:	
         pop 	{ip, pc}	@ pop return address into pc
