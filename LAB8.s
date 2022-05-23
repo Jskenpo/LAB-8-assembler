@@ -15,8 +15,7 @@ pin2:	 .int   5					@ pin out pin18 en placa
 pin3:    .int   22				    @ pin in pin19 en placa
 i:	 	 .int	0
 delayMs: .int	250
-INPUT1	 =	0
-INPUT2   =  0
+INPUT	 =	0
 OUTPUT	 =	1
 
 main: 
